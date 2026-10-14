@@ -5,6 +5,8 @@ A simple 6x6 Sudoku game for the Game Boy Advance (digits 1-6, boxes are
 [libtonc](https://gbadev.net/tonc/), for running on real hardware via
 an Everdrive GBA Pro (or any emulator).
 
+![Screenshot](screenshot.png)
+
 ## Controls
 
 | Input          | Action                                             |
