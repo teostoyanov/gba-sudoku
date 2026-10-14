@@ -26,19 +26,30 @@ about to place.
 
 ## One-time setup (build toolchain)
 
-This needs `sudo`, so run it yourself from a terminal:
+On Ubuntu/Debian, install [devkitPro](https://devkitpro.org/)'s devkitARM
+toolchain, libtonc, and the mGBA emulator:
 
 ```
-bash setup_toolchain.sh
+wget -U "dkp-apt" https://apt.devkitpro.org/install-devkitpro-pacman
+chmod +x install-devkitpro-pacman
+sudo ./install-devkitpro-pacman
+sudo dkp-pacman -Sy --noconfirm
+sudo dkp-pacman -S --noconfirm gba-dev devkit-env
+sudo apt install -y mgba-qt
 ```
 
-That installs:
-- devkitARM (the ARM cross-compiler toolchain)
-- libtonc + libgba (the GBA homebrew library this game is built on)
-- mGBA (an accurate GBA emulator, for testing before flashing real hardware)
+Then set the environment variables devkitARM needs (add these to
+`~/.bashrc` to make them permanent, or they may already be set for you by
+the `devkit-env` package after your next login):
 
-Then open a **new terminal** (so the environment variables it added to
-`~/.bashrc` take effect), or run `source ~/.bashrc`.
+```
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=$DEVKITPRO/devkitARM
+export LIBTONC=$DEVKITPRO/libtonc
+export PATH=$DEVKITARM/bin:$PATH
+```
+
+Open a **new terminal** (or `source ~/.bashrc`) so those take effect.
 
 ## Building
 
