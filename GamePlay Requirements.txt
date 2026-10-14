@@ -1,0 +1,16 @@
+We are doing a simple Sudoku Game with numbers from 1 to 6.
+
+#Game Play
+1. I should be able to start a new puzzel.
+2. If I enter a duplicate number in the line/row or area, it should be highlighted in red.
+3. Once the puzzel is solved it should show my current time and best time.
+4. I should have the option to give me a logical hint.
+
+# Navigation
+1. Using the controller I can move around the grid.
+2. Using the shoulder buttons I can navigate from the numbers 1 to 6.
+3. Using A or B I can place the number.
+4. Using the select button I should be presented with a hint.
+
+
+
